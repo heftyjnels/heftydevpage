@@ -1,6 +1,7 @@
 class AnnouncementResource < Madmin::Resource
   scope :draft
   scope :published
+  scope :upcoming
 
   # Attributes
   attribute :id, form: false

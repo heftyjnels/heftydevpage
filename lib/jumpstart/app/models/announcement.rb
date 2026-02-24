@@ -2,7 +2,8 @@ class Announcement < ApplicationRecord
   TYPES = %w[new fix improvement update]
 
   scope :draft, -> { where(published_at: nil) }
-  scope :published, -> { where.not(published_at: nil) }
+  scope :published, -> { where(published_at: ..Time.current) }
+  scope :upcoming, -> { where(published_at: 1.second.from_now..) }
 
   has_rich_text :description
 
@@ -10,6 +11,12 @@ class Announcement < ApplicationRecord
 
   attribute :published_at
   to_param :title
+
+  def draft? = !published_at?
+
+  def published? = published_at? && published_at <= Time.current
+
+  def upcoming? = published_at? && published_at > Time.current
 
   def self.unread?(user)
     most_recent_announcement = published.maximum(:published_at)
