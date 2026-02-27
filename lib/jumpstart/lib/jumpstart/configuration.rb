@@ -249,7 +249,7 @@ module Jumpstart
       end
 
       if appsignal?
-        copy_template("config/appsignal.yml")
+        copy_template("config/appsignal.rb")
       end
 
       if bugsnag?
