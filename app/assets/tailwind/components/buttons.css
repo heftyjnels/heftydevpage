@@ -110,11 +110,13 @@ button[disabled]        .when-enabled { display: none; }
   background: var(--bg-primary);
   color: var(--text-on-primary);
 
+  &:focus,
   &:hover {
     background: var(--bg-primary-hover);
     color: var(--text-on-primary);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-primary);
     color: var(--text-on-primary);
@@ -125,6 +127,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-primary);
     border: 1px solid var(--border-primary-hover);
 
+    &:focus,
     &:hover {
       background: var(--bg-primary-hover);
       color: var(--text-on-primary);
@@ -138,11 +141,13 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-secondary);
   border: 1px solid var(--border-secondary);
 
+  &:focus,
   &:hover {
     background: var(--bg-secondary-hover);
     color: var(--text-on-secondary-hover);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-secondary);
     color: var(--text-on-secondary);
@@ -153,6 +158,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-secondary);
     border: 1px solid var(--border-secondary);
 
+    &:focus,
     &:hover {
       background: var(--bg-secondary-hover);
       color: var(--text-on-secondary-hover);
@@ -165,11 +171,13 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-secondary);
   border: 1px solid var(--border-secondary);
 
+  &:focus,
   &:hover {
     background: var(--bg-secondary-hover);
     color: var(--text-on-secondary-hover);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-secondary);
     color: var(--text-on-secondary);
@@ -180,6 +188,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-secondary);
     border: 1px solid var(--border-secondary);
 
+    &:focus,
     &:hover {
       background: var(--bg-secondary-hover);
       color: var(--text-on-secondary-hover);
@@ -191,11 +200,13 @@ button[disabled]        .when-enabled { display: none; }
   background: var(--bg-danger);
   color: var(--text-on-danger);
 
+  &:focus,
   &:hover {
     background: var(--bg-danger-hover);
     color: var(--text-on-danger);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-danger);
     color: var(--text-on-danger);
@@ -211,6 +222,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-danger);
     border: 1px solid var(--border-danger);
 
+    &:focus,
     &:hover {
       background: var(--bg-danger-hover);
       color: var(--text-on-danger);
@@ -223,11 +235,13 @@ button[disabled]        .when-enabled { display: none; }
   background: var(--bg-success);
   color: var(--text-on-success);
 
+  &:focus,
   &:hover {
     background: var(--bg-success-hover);
     color: var(--text-on-success);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-success);
     color: var(--text-on-success);
@@ -243,6 +257,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-success);
     border: 1px solid var(--border-success);
 
+    &:focus,
     &:hover {
       background: var(--bg-success-hover);
       color: var(--text-on-success);
@@ -256,11 +271,13 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-light);
   border: 1px solid var(--border-light);
 
+  &:focus,
   &:hover {
     background: var(--bg-light-hover);
     color: var(--text-on-light);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-light);
     color: var(--text-on-light);
@@ -271,6 +288,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-light-outline);
     border: 1px solid var(--border-light);
 
+    &:focus,
     &:hover {
       background: var(--bg-light-hover);
       color: var(--text-on-light);
@@ -283,11 +301,13 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-light);
   border: 1px solid var(--border-light);
 
+  &:focus,
   &:hover {
     background: var(--bg-light-hover);
     color: var(--text-on-light);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-light);
     color: var(--text-on-light);
@@ -298,6 +318,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-light-outline);
     border: 1px solid var(--border-light);
 
+    &:focus,
     &:hover {
       background: var(--bg-light-hover);
       color: var(--text-on-light);
@@ -310,11 +331,13 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-light);
   border: 1px solid var(--border-light);
 
+  &:focus,
   &:hover {
     background: var(--bg-light-hover);
     color: var(--text-on-light);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-light);
     color: var(--text-on-light);
@@ -325,6 +348,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-light-outline);
     border: 1px solid var(--border-light);
 
+    &:focus,
     &:hover {
       background: var(--bg-light-hover);
       color: var(--text-on-light);
@@ -337,12 +361,14 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-on-dark);
   border: 1px solid var(--bg-dark);
 
+  &:focus,
   &:hover {
     background: var(--bg-dark-hover);
     color: var(--text-on-dark);
     border: 1px solid var(--bg-dark-hover);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: var(--bg-dark);
     color: var(--text-on-dark);
@@ -358,6 +384,7 @@ button[disabled]        .when-enabled { display: none; }
     color: var(--text-on-dark-outline);
     border: 1px solid var(--border-dark);
 
+    &:focus,
     &:hover {
       background: var(--bg-dark-hover);
       color: var(--text-on-dark);
@@ -370,10 +397,12 @@ button[disabled]        .when-enabled { display: none; }
   color: var(--text-primary);
   box-shadow: 0 0 #0000;
 
+  &:focus,
   &:hover {
     color: var(--text-primary-hover);
   }
 
+  &:disabled:focus,
   &:disabled:hover {
     background: transparent;
     color: var(--text-primary);
@@ -383,6 +412,7 @@ button[disabled]        .when-enabled { display: none; }
     background: var(--base-bg-lowest);
     border: 1px solid var(--border-primary-hover);
 
+    &:focus,
     &:hover {
       background: var(--base-bg-low);
     }
