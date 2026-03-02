@@ -80,6 +80,8 @@ fr:
         sign_up: "S'inscrire"
         login_html: "Ou %{link}"
         terms_html: "J'accepte les %{terms} &amp; %{privacy}"
+        terms_of_service: "conditions d'utilisation"
+        privacy_policy: "politique de confidentialité"
         submitting: "Envoi..."
       signed_up: "Bienvenue, vous êtes connecté."
       signed_up_but_inactive: "Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte n'est pas encore activé."
