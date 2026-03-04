@@ -9,5 +9,5 @@ To override the Jumpstart icons, simply add these files to `app/assets/images`
 
 ## Colors
 
-We recommend using `fill="current-color"` in your SVG so that CSS colors can be applied.
+We recommend using `fill="currentColor"` in your SVG so that CSS colors can be applied.
 
