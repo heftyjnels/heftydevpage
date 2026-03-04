@@ -1,6 +1,10 @@
 class AnnouncementsController < ApplicationController
   before_action :mark_as_read, if: :user_signed_in?
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to announcements_path
+  end
+
   def index
     @pagy, @announcements = pagy(Announcement.published.order(published_at: :desc))
   end
