@@ -64,7 +64,7 @@
                 <td class="p-3 font-medium">
                   <%= image_tag avatar_url_for(account_invitation), class: "hidden lg:inline-block h-6 rounded-full mr-2" %>
                   <%= account_invitation.name %>
-                  <%= badge "Awaiting response" %>
+                  <%= badge t(".awaiting_response") %>
                 </td>
                 <td class="p-3 text-sm font-medium text-gray-700"><%= account_user_roles(@account, account_invitation).join(", ") %></td>
                 <td class="p-3 text-right flex gap-2 justify-end">
