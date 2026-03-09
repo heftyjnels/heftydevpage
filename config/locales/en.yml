@@ -70,6 +70,7 @@ en:
       switch: "Switch"
       current: "Current Account"
     show:
+      awaiting_response: Awaiting response
       invite: "Invite A User"
       resend_invite: "Resend Invite"
       2fa: "2FA"
