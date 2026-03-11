@@ -1,3 +1,5 @@
+require "net/http"
+
 class ApplicationClient
   # A basic API client with HTTP methods
   #
@@ -89,7 +91,13 @@ class ApplicationClient
   #
   #   { "X-API-Key" => token }
   #   { "AccessKey" => token }
-  def authorization_header = {"Authorization" => "Bearer #{auth&.token || token}"}
+  def authorization_header
+    if (authorization = auth&.token || token)
+      {"Authorization" => "Bearer #{authorization}"}
+    else
+      {}
+    end
+  end
 
   # Override to customize default query params
   # Returns a Hash
