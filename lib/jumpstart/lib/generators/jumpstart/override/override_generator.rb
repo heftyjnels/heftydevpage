@@ -7,13 +7,7 @@ class Jumpstart::OverrideGenerator < Rails::Generators::Base
 
   def copy_paths
     paths.each do |path|
-      directory?(path) ? directory(path) : copy_file(path)
+      Dir.exist?(find_in_source_paths(path)) ? directory(path) : copy_file(path)
     end
-  end
-
-  private
-
-  def directory?(path)
-    Dir.exist? find_in_source_paths(path)
   end
 end
