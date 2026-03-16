@@ -1,0 +1,58 @@
+<section id="contact" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900">Get in Touch</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Tell me what you're building. I'll reply within one business day with thoughts on approach and fit.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <%= form_with model: Lead.new, url: contacts_path, class: "space-y-6", data: { turbo: true } do |f| %>
+        <% if f.object.errors.any? %>
+          <div class="alert alert-danger">
+            <p class="font-medium">Please fix the following:</p>
+            <ul class="mt-2 list-disc list-inside text-sm">
+              <% f.object.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name, class: "font-medium text-gray-900" %>
+          <%= f.text_field :name, class: "form-control", autocomplete: "name", required: true, placeholder: "Your name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, class: "font-medium text-gray-900" %>
+          <%= f.email_field :email, class: "form-control", autocomplete: "email", required: true, placeholder: "you@company.com" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :company, "Company or project", class: "font-medium text-gray-900" %>
+          <%= f.text_field :company, class: "form-control", autocomplete: "organization", placeholder: "Company name (optional)" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :message, "What are you building?", class: "font-medium text-gray-900" %>
+          <%= f.text_area :message, class: "form-control", rows: 5, required: true, placeholder: "Brief description of your project, timeline, and any specific needs..." %>
+        </div>
+
+        <%# Honeypot field for spam prevention %>
+        <div class="hidden" aria-hidden="true">
+          <%= f.text_field :company_url, tabindex: "-1", autocomplete: "off" %>
+        </div>
+
+        <div>
+          <%= f.submit "Send Message", class: "btn btn-primary btn-block" %>
+        </div>
+
+        <p class="text-xs text-gray-500 text-center mt-4">
+          I'll only use this to reply. Happy to sign an NDA.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>

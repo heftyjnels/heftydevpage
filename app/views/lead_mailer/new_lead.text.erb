@@ -1,0 +1,12 @@
+New Lead Submission
+===================
+
+Name:       <%= @lead.name %>
+Email:      <%= @lead.email %>
+<% if @lead.company.present? %>Company:    <%= @lead.company %>
+<% end %>IP Address: <%= @lead.ip_address %>
+Submitted:  <%= @lead.created_at&.strftime("%B %d, %Y at %I:%M %p UTC") %>
+
+Message:
+---------
+<%= @lead.message %>
