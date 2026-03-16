@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import ClipboardJS from "clipboard"
-import { autoUpdate, autoPlacement, computePosition, offset, arrow } from "@floating-ui/dom"
+import { autoPlacement, computePosition, offset, arrow } from "@floating-ui/dom"
 
 export default class extends Controller {
   static values = {
