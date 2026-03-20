@@ -26,12 +26,15 @@
                   <%= tag.span account.name, class: "text-gray-900 dark:text-gray-100 font-semibold text-sm no-underline hover:text-primary-500 dark:hover:text-primary-500" %>
                   <%= badge "Personal" if account.personal_account_for?(current_user) %>
                 <% end %>
+              </td>
 
+              <td class="text-sm text-gray-700 dark:text-gray-300">
+                <%= pluralize account.users.size, t(".user") %>
               </td>
 
               <td class="hidden sm:table-cell text-sm text-right">
                 <% if current_account != account %>
-                  <%= switch_account_button account, label: t(".switch"), class: "btn btn-secondary btn-sm" %>
+                  <%= switch_account_button account, label: t(".switch"), class: "btn btn-secondary" %>
                 <% else %>
                   <%= badge t(".current") %>
                 <% end %>

@@ -29,6 +29,7 @@
           <thead>
             <tr>
               <th class="p-3 text-xs text-left text-gray-600 dark:text-gray-300 uppercase"><%= AccountUser.human_attribute_name(:user) %></th>
+              <th class="p-3 text-xs text-left text-gray-600 dark:text-gray-300 uppercase"><%= AccountUser.human_attribute_name(:email) %></th>
               <th class="p-3 text-xs text-left text-gray-600 dark:text-gray-300 uppercase"><%= AccountUser.human_attribute_name(:roles) %></th>
               <th class="p-3 text-xs text-left text-gray-600 dark:text-gray-300 uppercase"></th>
               <th></th>
@@ -42,9 +43,13 @@
                 <td class="p-3 font-medium">
                   <%= image_tag avatar_url_for(user), class: "hidden lg:inline-block size-6 rounded-full mr-2" %>
                   <%= user.name || user.email %>
+                  <% if Current.user == user %>
+                    (<%= t ".you" %>)
+                  <% end %>
                 </td>
-                <td class="p-3 text-sm font-medium text-gray-700 dark:text-gray-300"><%= account_user_roles(@account, account_user).join(", ") %></td>
-                <td class="p-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                <td class="p-3 text-sm text-gray-700 dark:text-gray-300"><%= user.email %></td>
+                <td class="p-3 text-sm text-gray-700 dark:text-gray-300"><%= account_user_roles(@account, account_user).join(", ") %></td>
+                <td class="p-3 text-sm text-gray-700 dark:text-gray-300">
                   <% if user.otp_required_for_login? %>
                     <div class="flex gap-1 items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 inline-block">
@@ -66,7 +71,9 @@
                   <%= account_invitation.name %>
                   <%= badge t(".awaiting_response") %>
                 </td>
-                <td class="p-3 text-sm font-medium text-gray-700"><%= account_user_roles(@account, account_invitation).join(", ") %></td>
+                <td class="p-3 text-sm text-gray-700 dark:text-gray-300"><%= account_invitation.email %></td>
+                <td class="p-3 text-sm text-gray-700 dark:text-gray-300"><%= account_user_roles(@account, account_invitation).join(", ") %></td>
+                <td></td>
                 <td class="p-3 text-right flex gap-2 justify-end">
                   <%= button_to t(".resend_invite"), resend_account_account_invitation_path(@account, account_invitation), class: "btn btn-secondary" if account_admin?(@account, current_user) %>
                   <%= tag.button t(".copy_link"), class: "btn btn-secondary", data: { controller: "clipboard", clipboard_text: account_invitation_url(account_invitation) } if account_admin?(@account, current_user) %>
