@@ -1,0 +1,32 @@
+<% Current.meta_tags.set(title: "Message Received") %>
+
+<section class="py-24 sm:py-32">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 text-green-600">
+        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+      </svg>
+    </div>
+
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900">Message Received</h1>
+
+    <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+      Thanks for reaching out. I'll review your message and reply within one business day
+      with thoughts on approach and fit.
+    </p>
+
+    <div class="mt-8 p-6 bg-gray-50 rounded-xl text-left text-sm text-gray-600 space-y-3">
+      <p><strong class="text-gray-900">What happens next:</strong></p>
+      <ul class="space-y-2 list-disc list-inside">
+        <li>You'll receive a confirmation email shortly</li>
+        <li>I'll review your project details and reply with initial thoughts</li>
+        <li>If it's a good fit, we'll schedule a short call to discuss scope</li>
+      </ul>
+      <p class="text-gray-500">Happy to sign an NDA if needed.</p>
+    </div>
+
+    <div class="mt-10">
+      <%= link_to "Back to homepage", root_path, class: "btn btn-secondary btn-outline" %>
+    </div>
+  </div>
+</section>

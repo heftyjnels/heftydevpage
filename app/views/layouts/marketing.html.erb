@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <%= render Current.meta_tags %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= viewport_meta_tag %>
+
+    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "tailwind", media: "all", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <%= yield :head %>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <%= link_to root_path, class: "flex items-center gap-2 font-bold text-xl tracking-tight text-gray-900 no-underline" do %>
+            <%= render_svg "logo", class: "h-7 fill-current" %>
+            <span class="sr-only"><%= Jumpstart.config.application_name %></span>
+          <% end %>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <%= link_to "Services", "#services", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
+          <%= link_to "How It Works", "#how-it-works", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
+          <%= link_to "Reviews", "#reviews", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
+          <%= link_to "Pricing", "#pricing", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
+          <%= link_to "Contact Heftydev", "#contact", class: "btn btn-primary btn-sm" %>
+        </div>
+
+        <div class="md:hidden">
+          <button type="button" id="mobile-menu-toggle" class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 space-y-2">
+        <%= link_to "Services", "#services", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
+        <%= link_to "How It Works", "#how-it-works", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
+        <%= link_to "Reviews", "#reviews", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
+        <%= link_to "Pricing", "#pricing", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
+        <%= link_to "Contact Heftydev", "#contact", class: "block btn btn-primary btn-sm text-center mt-2" %>
+      </div>
+    </header>
+
+    <main>
+      <%= render "flash" %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div>
+            <p class="text-white font-semibold text-lg">Heftydev, LLC</p>
+            <p class="text-sm mt-1">Rails consulting for complex, regulated SaaS.</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-6 text-sm">
+            <%= link_to "Privacy", privacy_path, class: "text-gray-400 hover:text-white no-underline transition" %>
+            <%= link_to "Terms", terms_path, class: "text-gray-400 hover:text-white no-underline transition" %>
+            <%= link_to "LinkedIn", "https://linkedin.com/in/trevornelson", target: "_blank", rel: "noopener noreferrer", class: "text-gray-400 hover:text-white no-underline transition" %>
+            <%= link_to "GitHub", "https://github.com/trevornelson", target: "_blank", rel: "noopener noreferrer", class: "text-gray-400 hover:text-white no-underline transition" %>
+            <%= mail_to "trevor@heftydev.com", "Email", class: "text-gray-400 hover:text-white no-underline transition" %>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-800 text-sm">
+          <p>&copy; <%= Date.current.year %> Heftydev, LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

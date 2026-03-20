@@ -1,0 +1,30 @@
+<h2>New Lead Submission</h2>
+
+<table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td style="font-weight: bold; vertical-align: top; width: 120px;">Name</td>
+    <td><%= @lead.name %></td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; vertical-align: top;">Email</td>
+    <td><%= mail_to @lead.email %></td>
+  </tr>
+  <% if @lead.company.present? %>
+    <tr>
+      <td style="font-weight: bold; vertical-align: top;">Company</td>
+      <td><%= @lead.company %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td style="font-weight: bold; vertical-align: top;">Message</td>
+    <td><%= simple_format @lead.message %></td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; vertical-align: top;">IP Address</td>
+    <td><%= @lead.ip_address %></td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; vertical-align: top;">Submitted</td>
+    <td><%= @lead.created_at&.strftime("%B %d, %Y at %I:%M %p UTC") %></td>
+  </tr>
+</table>

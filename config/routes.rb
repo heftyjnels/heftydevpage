@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     # get "/dashboard", to: "dashboard#show", as: :user_root
   end
 
+  # Contact form
+  resources :contacts, only: [:create]
+  get :thanks, to: "contacts#thanks"
+
   # Public marketing homepage
   root to: "public#index"
 end
