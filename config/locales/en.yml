@@ -69,6 +69,7 @@ en:
       create: "Create an Account"
       switch: "Switch"
       current: "Current Account"
+      user: "user"
     show:
       awaiting_response: Awaiting response
       invite: "Invite A User"
@@ -79,6 +80,7 @@ en:
       copy_link: "Copy link"
       switch: "Switch"
       personal_team_description: "Your personal account is private. Create a new account to share with your team."
+      you: "you"
     new:
       title: "New Account"
       description: "Collaborate and share with others by creating an account."
@@ -379,6 +381,7 @@ en:
           contact_us: "Contact us"
           subject: "Question about %{product}"
           active_until: "Your plan will be canceled, but is still available until the end of your billing period."
+          cancel_immediately: "Your plan will be cancelled immediately."
           resume: "If you change your mind, you can resume your subscription."
           button: "Cancel plan"
           back: "Back to Billing"
