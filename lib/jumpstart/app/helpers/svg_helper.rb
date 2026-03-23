@@ -8,7 +8,13 @@ module SvgHelper
       svg.prepend_child(document.create_element("title", name.underscore.humanize))
 
       svg["role"] = "img"
-      svg["class"] = safe_join((svg["class"] || "").split(" ") + Array.wrap(options.fetch(:class, "fill-current")), " ")
+      merged_class = safe_join((svg["class"] || "").split(" ") + Array.wrap(options.fetch(:class, "fill-current")), " ")
+      svg["class"] = merged_class
+
+      # Allow Tailwind h-/w-/size-* to control dimensions; huge intrinsic width/height (e.g. banner SVGs) otherwise blows flex layouts.
+      token_sized = merged_class.split.any? { |c| c.match?(/\A(h-\d+|h-\[|w-\d+|w-\[|size-\d+)/) }
+      svg.remove_attribute("width") if token_sized
+      svg.remove_attribute("height") if token_sized
 
       document.to_s.html_safe
     else

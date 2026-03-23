@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>">
+<html lang="<%= I18n.locale %>" class="overflow-x-hidden">
   <head>
     <%= render Current.meta_tags %>
     <%= csrf_meta_tags %>
@@ -13,22 +13,22 @@
 
     <%= yield :head %>
   </head>
-  <body class="bg-white text-gray-900 antialiased">
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <div class="flex items-center">
+  <body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+    <header class="sticky top-0 z-[60] bg-white/95 backdrop-blur border-b border-gray-100 max-w-[100vw]">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 h-20 min-w-0">
+        <div class="flex items-center min-w-0 shrink-0">
           <%= link_to root_path, class: "flex items-center gap-2 font-bold text-xl tracking-tight text-gray-900 no-underline" do %>
-            <%= render_svg "logo", class: "h-7 fill-current" %>
+            <%= render_svg "logo", class: "h-[4.5rem] w-auto max-w-[24rem] fill-current" %>
             <span class="sr-only"><%= Jumpstart.config.application_name %></span>
           <% end %>
         </div>
 
-        <div class="hidden md:flex items-center gap-8">
-          <%= link_to "Services", "#services", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
-          <%= link_to "How It Works", "#how-it-works", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
-          <%= link_to "Reviews", "#reviews", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
-          <%= link_to "Pricing", "#pricing", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition" %>
-          <%= link_to "Contact Heftydev", "#contact", class: "btn btn-primary btn-sm" %>
+        <div class="hidden md:flex items-center justify-end gap-6 lg:gap-8 shrink min-w-0 flex-wrap">
+          <%= link_to "Services", "#services", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition whitespace-nowrap" %>
+          <%= link_to "How It Works", "#how-it-works", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition whitespace-nowrap" %>
+          <%= link_to "References", "#references", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition whitespace-nowrap" %>
+          <%= link_to "Pricing", "#pricing", class: "text-sm font-medium text-gray-600 hover:text-gray-900 no-underline transition whitespace-nowrap" %>
+          <%= link_to "Book an MVP call", "#contact", class: "btn btn-primary btn-sm shrink-0 whitespace-nowrap" %>
         </div>
 
         <div class="md:hidden">
@@ -43,9 +43,9 @@
       <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 space-y-2">
         <%= link_to "Services", "#services", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
         <%= link_to "How It Works", "#how-it-works", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
-        <%= link_to "Reviews", "#reviews", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
+        <%= link_to "References", "#references", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
         <%= link_to "Pricing", "#pricing", class: "block py-2 text-sm font-medium text-gray-600 hover:text-gray-900 no-underline" %>
-        <%= link_to "Contact Heftydev", "#contact", class: "block btn btn-primary btn-sm text-center mt-2" %>
+        <%= link_to "Book an MVP call", "#contact", class: "block btn btn-primary btn-sm text-center mt-2" %>
       </div>
     </header>
 
