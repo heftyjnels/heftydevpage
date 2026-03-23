@@ -1,7 +1,20 @@
-<%= render "public/hero" %>
-<%= render "public/services" %>
-<%= render "public/capabilities" %>
-<%= render "public/why_me" %>
-<%= render "public/reviews" %>
-<%= render "public/pricing" %>
-<%= render "public/contact" %>
+<div class="relative isolate overflow-x-clip max-w-[100vw]">
+  <div class="pointer-events-none fixed inset-0 z-[1] min-h-[100dvh] overflow-x-clip" aria-hidden="true">
+    <%= image_tag "clear_reclining.png",
+          class: "absolute inset-y-0 right-0 h-full min-h-[100dvh] w-[min(72vw,960px)] sm:w-[min(62vw,1100px)] max-w-none object-cover [object-position:92%_center] opacity-[0.88]" %>
+  </div>
+
+  <div
+    class="pointer-events-none fixed inset-0 z-[2] bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.9)_14%,rgba(255,255,255,0.72)_30%,rgba(255,255,255,0.38)_48%,rgba(255,255,255,0.14)_66%,rgba(255,255,255,0.04)_82%,transparent_100%)]"
+    aria-hidden="true"></div>
+
+  <div class="relative z-10">
+    <%= render "public/hero" %>
+    <%= render "public/services" %>
+    <%= render "public/capabilities" %>
+    <%= render "public/why_me" %>
+    <%= render "public/reviews" %>
+    <%= render "public/pricing" %>
+    <%= render "public/contact" %>
+  </div>
+</div>

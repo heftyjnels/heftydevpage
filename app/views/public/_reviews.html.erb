@@ -1,40 +1,32 @@
-<section id="reviews" class="py-16 sm:py-24 bg-white">
+<section id="references" class="py-16 sm:py-24 bg-transparent">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900">What Clients Say</h2>
-      <p class="mt-4 text-lg text-gray-600">
-        Feedback from founders and engineering leaders I've worked with.
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900">References &amp; how we work</h2>
+      <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+        I can share references from founders and engineering leaders on request (happy to sign an NDA). In the meantime, here&rsquo;s what you can expect from working together: weekly demos, daily async updates, documented decisions, and handoff-ready Rails patterns.
       </p>
     </div>
 
-    <% if Testimonial::PLACEHOLDER %>
-      <div class="mt-6 text-center">
-        <span class="inline-flex items-center gap-1.5 bg-yellow-50 border border-yellow-200 text-yellow-800 text-xs font-medium rounded-full px-3 py-1">
-          Placeholders&mdash;replace with real reviews before launch
-        </span>
-      </div>
-    <% end %>
-
-    <div class="mt-12 grid md:grid-cols-3 gap-8">
-      <% Testimonial::LIST.each do |testimonial| %>
-        <div class="card p-8 flex flex-col">
-          <div class="flex-1">
-            <svg class="size-8 text-gray-300 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4Zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4Z" />
-            </svg>
-            <p class="text-gray-700 leading-relaxed"><%= testimonial[:quote] %></p>
-          </div>
-          <div class="mt-6 pt-6 border-t border-gray-100">
-            <p class="font-semibold text-gray-900 text-sm"><%= testimonial[:name] %></p>
-            <p class="text-sm text-gray-500"><%= testimonial[:title] %>, <%= testimonial[:company] %></p>
-            <% if testimonial[:industry] %>
-              <span class="inline-block mt-2 text-xs font-medium text-gray-500 bg-gray-100 rounded-full px-2.5 py-0.5">
-                <%= testimonial[:industry] %>
-              </span>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+    <div class="mt-10 max-w-xl mx-auto rounded-2xl border border-gray-200/70 bg-white/85 p-8 shadow-sm">
+      <p class="text-sm font-medium text-gray-900 mb-3">Signals of competence</p>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li class="flex items-start gap-2">
+          <span class="text-green-600 mt-0.5 shrink-0" aria-hidden="true">&check;</span>
+          <span>Weekly demos of working features</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600 mt-0.5 shrink-0" aria-hidden="true">&check;</span>
+          <span>Daily async updates on progress and blockers</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600 mt-0.5 shrink-0" aria-hidden="true">&check;</span>
+          <span>Documented architectural decisions</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-green-600 mt-0.5 shrink-0" aria-hidden="true">&check;</span>
+          <span>Conventional Rails your next hire can scale</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

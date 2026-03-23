@@ -3,8 +3,8 @@ class PublicController < ApplicationController
 
   def index
     Current.meta_tags.set(
-      title: "Rails Consulting for Complex Multi-Tenant SaaS",
-      description: "Senior Rails engineer specializing in legal tech, private capital, and insurance SaaS. Multi-tenant apps, billing, KYC, and document workflows. $175/hr.",
+      title: "Rails MVP Developer | Pre-Seed SaaS | Heftydev",
+      description: "Ship a pre-seed Rails MVP with payments, multitenancy, OAuth, notifications, email, and 2FA. Senior engineer hardening AI-accelerated delivery. Legal tech, fund admin, insurtech. $175/hr.",
       og_type: "website",
       twitter_type: "summary_large_image"
     )
